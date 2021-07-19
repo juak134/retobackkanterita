@@ -14,8 +14,10 @@ public class OrderService implements IOrderService{
 	private OrderRepository orderRepository;
 
 	@Override
+	//Función que retorna el registro de la orden utilizando el id como campo de comparación 
 	public OrderDto getOrder(Long id) {
 		return orderRepository.findById(id)
+				//si se encuentra un registro con el id del parametro se crea una variable tipo dto con los datos de la orden
 				.map(order -> new OrderDto(order.getId(), order.getNumber(), order.getClient(), order.getTotal(), order.getDateOrder()))
 				.orElse(null);
 	}
