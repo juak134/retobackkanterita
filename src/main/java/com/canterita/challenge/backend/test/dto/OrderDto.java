@@ -8,6 +8,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
+//Permite devolver la información de las entidades cuando se realiza una realiza una petición
 public class OrderDto {
 
 	public OrderDto(Long id2, String number2, String client2, Double total2, LocalDateTime dateOrder2) {
@@ -17,7 +18,7 @@ public class OrderDto {
 		setTotal(total2);
 		setDateOrder(dateOrder2);
 	}
-
+	//Funciones que permiten que el servicio reconozca que debe devolvr los valores como respuesta de la solicitud
 	public Long getId() {
 		return id;
 	}
